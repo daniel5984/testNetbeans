@@ -1,24 +1,93 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package exemplo.git;
+package computeronix;
 
-/**
- *
- * @author ratcrackuser
- */
-public class ExemploGit {
+import comum.Le;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
-    /**
-     * @param args the command line arguments
-     */
+
+public class ComputerOnix {
+
     public static void main(String[] args) {
-        // TODO code application logic here
         
         
-        System.out.println("Meu Primeiro Commit em Netbeans 8.2");
+        System.out.println("Versão 3");
     }
+        
+    public class venda {
+            private int numVenda;
+            private Date data;
+            private float valor;
+            
+            public venda(int nv) {
+            numVenda = nv;
+            data = new Date();
+        }
+            public void setDate(Date d) {
+            data = d;
+        }
+            public Date getDate(){
+                return data;
+            }
+            public int getNumVenda() {
+            return numVenda;
+        }
+            public float getValor(){
+                return valor;
+            }
+            public void setValor(float val){
+                valor = val;
+            }
+    }
+    
+    public class vendaArtigo extends venda{
+        private venda[] artigo;
+
+        public vendaArtigo(int nv) {
+            super(nv);
+        }
+        
+        
+    }
+    
+    public class ColVendas{
+        venda v ;
+        int count=0;
+        ArrayList<venda> list;   //Criar uma arrayList 
+        
+        public ColVendas(){
+            
+           
+            list=new ArrayList<venda>();
+            
+        }
+        
+        public void adicionarVenda(venda v){
+            Date d = new Date();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            
+            if(list.contains(v)){
+                System.out.println("Não Pode adicionar");
+            }else{
+                
+                v = new venda(count++);
+                System.out.println("Adicionar uma venda");
+                
+                System.out.println("Qual o valor da venda?");
+                int valor= Le.umInt();
+                v.setValor(valor);
+                System.out.println(dateFormat.format(d));
+                
+                System.out.println("Versão 5");
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    
     
 }
