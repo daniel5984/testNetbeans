@@ -19,6 +19,10 @@ public class ExemploGit {
         
         
         System.out.println("Meu Primeiro Commit em Netbeans 8.2");
+        
+        System.out.println("Atualização");
+        
+        
     }
     
 }
